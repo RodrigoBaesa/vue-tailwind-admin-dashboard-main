@@ -58,28 +58,37 @@
           9.05%
         </span>
         </div>
+      </div>      
+
+      <div class="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03] p-4 space-y-6">
+        <Modal v-if="isOpen" @close="closeModal = false">
+          <template #body>
+          </template>
+        </Modal>
+        
+        <MonthlyTarget />
       </div>
 
       <div class="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03] p-4 space-y-6">
-        <div class="flex items-end justify-between mt-5">
-          <MonthlySale />
-        </div>
-      </div>
-
-      
-
-      <div class="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03] p-4 space-y-6">
-        <!-- Modal -->
         <Modal v-if="isOpen" @close="closeModal = false">
           <template #body>
           </template>
         </Modal>
 
         <MonthlySale />
-
-        <MonthlyTarget />
       </div>
     </div>
+
+      <div class="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03] p-4 space-y-6">
+        <Modal v-if="isOpen" @close="closeModal = false">
+          <template #body>
+          </template>
+        </Modal>
+
+        <div class="col-span-12 xl:col-span-7">
+          <recent-orders />
+        </div>
+      </div>
   </AdminLayout>
 
 </template>
@@ -90,9 +99,10 @@ import { ref } from 'vue'
 import AdminLayout from '@/components/layout/AdminLayout.vue'
 import PageBreadcrumb from '@/components/common/PageBreadcrumb.vue'
 import Modal from '@/components/profile/Modal.vue'
-import MonthlySale from '@/components/ecommerce/MonthlyTarget.vue'
-import MonthlyTarget from '@/components/ecommerce/MonthlySale.vue'
+import MonthlyTarget from '@/components/ecommerce/MonthlyTarget.vue'
+import MonthlySale from '@/components/ecommerce/MonthlySale.vue'
 import CustomerDemographic from '@/components/ecommerce/CustomerDemographic.vue'
+import RecentOrders from '@/components/ecommerce/RecentOrders.vue'
 
 const currentPageTitle = ref('Geral')
 const isOpen = ref(false)
