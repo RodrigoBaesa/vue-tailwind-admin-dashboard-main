@@ -9,7 +9,7 @@
         <div>
           <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90">Monthly Target!</h3>
           <p class="mt-1 text-gray-500 text-theme-sm dark:text-gray-400">
-            Target you’ve set for each month
+            Target you’ve set for each month, and your progress towards it.
           </p>
         </div>
         <div>
